@@ -1,4 +1,4 @@
-import 'package:adhakr/assets/test.dart';
+import 'package:adhakr/test.dart';
 import 'package:adhakr/home.dart';
 import 'package:flutter/material.dart';
 
