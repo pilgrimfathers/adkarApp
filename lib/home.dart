@@ -12,31 +12,31 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white10,
+        backgroundColor: Colors.white,
         body: SafeArea(
-          child: Stack(
+          child: Column(
             children: [
-              Container(
-                  height: MediaQuery.of(context).size.height / 3.5,
-                  color: Colors.white,
-                  child: Column(children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text("hi"),
-                        Text(
-                          "As-salamu alaykum",
-                          style: TextStyle(fontSize: 25),
-                        )
-                      ],
-                    )
-                  ])),
-              Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20))),
-              Align(
-                alignment: Alignment.bottomCenter,
+              Flexible(
+                flex: 1,
+                child: Container(
+                    height: MediaQuery.of(context).size.height / 3.5,
+                    color: Colors.white,
+                    child: Column(children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          Text("hi"),
+                          Text(
+                            "As-salamu alaykum",
+                            style: TextStyle(
+                                fontSize: 25, color: Color(0xff106cb0)),
+                          )
+                        ],
+                      )
+                    ])),
+              ),
+              Flexible(
+                flex: 6,
                 child: Container(
                     height: MediaQuery.of(context).size.height / 1.3,
                     decoration: const BoxDecoration(
@@ -129,10 +129,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                           ),
-                          Image.asset(
-                            height: 70,
-                            "lib/assets/homeui.png",
-                          ),
+                          Image.asset("lib/assets/homeui.png", height: 70),
                           const Text(
                             "\"Keep your tounge wet with\nthe rememberence of Allah\"",
                             style: TextStyle(
