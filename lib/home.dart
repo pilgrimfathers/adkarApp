@@ -17,6 +17,21 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Stack(
             children: [
               Container(
+                  height: MediaQuery.of(context).size.height / 3.5,
+                  color: Colors.white,
+                  child: Column(children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        Text("hi"),
+                        Text(
+                          "As-salamu alaykum",
+                          style: TextStyle(fontSize: 25),
+                        )
+                      ],
+                    )
+                  ])),
+              Container(
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20))),
