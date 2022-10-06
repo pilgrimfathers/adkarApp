@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:toggle_switch/toggle_switch.dart';
 
 class test extends StatefulWidget {
   const test({Key? key}) : super(key: key);
@@ -12,11 +13,16 @@ class _testState extends State<test> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        drawer: Drawer(
+            child: ListView(
+          padding: EdgeInsets.zero,
+          children: [DrawerHeader(child: Text("Header"))],
+        )),
         backgroundColor: Colors.white,
         body: SafeArea(
           child: Column(
             children: [
-              Flexible(
+              Expanded(
                 flex: 1,
                 child: Container(
                     height: MediaQuery.of(context).size.height / 3.5,
@@ -24,28 +30,51 @@ class _testState extends State<test> {
                     child: Column(children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          Text("hi"),
-                          Text(
+                        children: [
+                          Builder(builder: (BuildContext context) {
+                            return IconButton(
+                                onPressed: () {
+                                  Scaffold.of(context).openDrawer();
+                                },
+                                icon: Icon(Icons.menu));
+                          }),
+                          const Text(
                             "As-salamu alaykum",
                             style: TextStyle(
                                 fontSize: 25, color: Color(0xff106cb0)),
                           )
                         ],
+                      ),
+                      SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          ToggleSwitch(
+                            minWidth: 50,
+                            cornerRadius: 20,
+                            animate: true,
+                            initialLabelIndex: 0,
+                            totalSwitches: 2,
+                            icons: [
+                              Icons.nightlight_round_rounded,
+                              Icons.sunny
+                            ],
+                          )
+                        ],
                       )
                     ])),
               ),
-              Flexible(
-                flex: 6,
+              Expanded(
+                flex: 5,
                 child: Container(
-                    height: MediaQuery.of(context).size.height / 1.3,
+                    height: MediaQuery.of(context).size.height / 1.1,
                     decoration: const BoxDecoration(
                         color: Color(0xff4d90cd),
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(20),
                             topRight: Radius.circular(20))),
                     child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
                             color: Color(0xff366895),
@@ -143,3 +172,35 @@ class _testState extends State<test> {
         ));
   }
 }
+
+// import 'package:flutter/material.dart';
+//
+// class test extends StatefulWidget {
+//   const test({Key? key}) : super(key: key);
+//
+//   @override
+//   State<test> createState() => _testState();
+// }
+//
+// class _testState extends State<test> {
+//   bool drawer = true;
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       drawer: Drawer(
+//         child: ListView(
+//             padding: EdgeInsets.zero,
+//             children: [DrawerHeader(child: Text("header"))]),
+//       ),
+//       body: SafeArea(
+//         child: Builder(builder: (BuildContext context) {
+//           return IconButton(
+//               onPressed: () {
+//                 Scaffold.of(context).openDrawer();
+//               },
+//               icon: Icon(Icons.menu));
+//         }),
+//       ),
+//     );
+//   }
+// }
