@@ -55,7 +55,7 @@ class _testState extends State<test> {
                             animate: true,
                             initialLabelIndex: 0,
                             totalSwitches: 2,
-                            icons: [
+                            icons: const [
                               Icons.nightlight_round_rounded,
                               Icons.sunny
                             ],
