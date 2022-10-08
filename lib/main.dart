@@ -1,4 +1,6 @@
+import 'package:adhakr/dikr.dart';
 import 'package:adhakr/test.dart';
+import 'package:adhakr/widgets.dart';
 import 'package:adhakr/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -29,6 +31,6 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
-        home: const HomeScreen());
+        home: const Test());
   }
 }
