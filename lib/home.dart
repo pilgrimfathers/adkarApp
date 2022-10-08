@@ -126,6 +126,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               height: 120,
                               width: 300,
                               decoration: BoxDecoration(
+                                boxShadow: [BoxShadow(blurRadius: 20)],
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(30),
                               ),
@@ -145,6 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               height: 120,
                               width: 300,
                               decoration: BoxDecoration(
+                                boxShadow: [BoxShadow(blurRadius: 20)],
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(30),
                               ),
