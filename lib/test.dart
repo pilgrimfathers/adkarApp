@@ -14,13 +14,17 @@ class _TestState extends State<Test> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+          title: Title(color: Colors.white, child: Icon(Icons.home)),
+          iconTheme: IconThemeData()),
       backgroundColor: Color(0xff4d91cc),
-      body: Align(
+      body: Container(
         alignment: Alignment.center,
         child: ListView(children: [
           CarouselSlider(
               items: [DikrCont(), DikrCont(), DikrCont()],
               options: CarouselOptions(
+                disableCenter: false,
                 height: MediaQuery.of(context).size.height / 1.5,
                 enlargeCenterPage: true,
                 autoPlay: true,
