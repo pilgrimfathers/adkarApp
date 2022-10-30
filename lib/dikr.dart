@@ -1,3 +1,4 @@
+import 'package:adhakr/home.dart';
 import 'package:adhakr/widgets.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
@@ -22,7 +23,10 @@ class _dikrState extends State<dikr> {
           IconButton(
             padding: EdgeInsets.only(bottom: 30, left: 20),
             alignment: AlignmentDirectional.topStart,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => HomeScreen()));
+            },
             icon: const Icon(Icons.home, color: Colors.white),
           ),
           CarouselSlider(

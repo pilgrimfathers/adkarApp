@@ -1,6 +1,8 @@
+import 'package:adhakr/widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:toggle_switch/toggle_switch.dart';
+import 'dikr.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -55,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             animate: true,
                             initialLabelIndex: 0,
                             totalSwitches: 2,
-                            icons: [
+                            icons: const [
                               Icons.nightlight_round_rounded,
                               Icons.sunny
                             ],
@@ -121,12 +123,17 @@ class _HomeScreenState extends State<HomeScreen> {
                             ]),
                           ),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => dikr()));
+                            },
                             child: Container(
                               height: 120,
                               width: 300,
                               decoration: BoxDecoration(
-                                boxShadow: [BoxShadow(blurRadius: 20)],
+                                boxShadow: [BoxShadow(blurRadius: 05)],
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(30),
                               ),
@@ -146,7 +153,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               height: 120,
                               width: 300,
                               decoration: BoxDecoration(
-                                boxShadow: [BoxShadow(blurRadius: 20)],
+                                boxShadow: const [
+                                  BoxShadow(
+                                      blurRadius: 05, color: Color(0xff03436e))
+                                ],
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(30),
                               ),
