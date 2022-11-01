@@ -12,6 +12,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  Color color1 = Colors.white;
+  final Color color2 = Colors.black;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,9 +54,15 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           ToggleSwitch(
+                            // onToggle: (index) {
+                            //   setState(() {
+                            //     color1 = Colors.black;
+                            //   });
+                            // },
+                            changeOnTap: true,
                             minWidth: 50,
                             cornerRadius: 20,
-                            animate: true,
+                            animate: false,
                             initialLabelIndex: 0,
                             totalSwitches: 2,
                             icons: const [
