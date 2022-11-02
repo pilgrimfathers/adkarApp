@@ -54,11 +54,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           ToggleSwitch(
-                            // onToggle: (index) {
-                            //   setState(() {
-                            //     color1 = Colors.black;
-                            //   });
-                            // },
+                            onToggle: (index) {
+                              print("pressed toggle");
+                            },
                             changeOnTap: true,
                             minWidth: 50,
                             cornerRadius: 20,
