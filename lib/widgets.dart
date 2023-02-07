@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+
 
 class DikrCont extends StatefulWidget {
   const DikrCont({Key? key}) : super(key: key);
@@ -32,28 +32,4 @@ class _DikrContState extends State<DikrCont> {
   }
 }
 
-class DarkThemePreference {
-  static const Theme_Status = "THEMESTATUS";
 
-  setDarkTheme(bool value) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setBool(Theme_Status, value);
-  }
-
-  Future<bool> getTheme() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getBool(Theme_Status) ?? false;
-  }
-}
-
-class DarkThemeProvider with ChangeNotifier {
-  DarkThemePreference darkThemePreference = DarkThemePreference();
-  bool _darkTheme = false;
-
-  bool get darkTheme => _darkTheme;
-  set darkTheme(bool value) {
-    _darkTheme = value;
-    darkThemePreference.setDarkTheme(value);
-    notifyListeners();
-  }
-}
