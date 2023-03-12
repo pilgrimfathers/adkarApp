@@ -30,7 +30,7 @@ class _dikrState extends State<dikr> {
             icon: const Icon(Icons.home, color: Colors.white),
           ),
           CarouselSlider(
-              items: const [DikrCont(), DikrCont(), DikrCont()],
+              items:  [DikrCont(), DikrCont(), DikrCont()],
               options: CarouselOptions(
                 pauseAutoPlayInFiniteScroll: true,
                 autoPlayInterval: const Duration(days: 4),

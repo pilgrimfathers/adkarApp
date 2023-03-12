@@ -3,8 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dikr.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:hijri/digits_converter.dart';
-import 'package:hijri/hijri_array.dart';
 import 'package:hijri/hijri_calendar.dart';
 import 'package:geolocator/geolocator.dart';
 
@@ -90,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
     String month = _today.toFormat("MMMM dd yyyy").toString();
     Coordinates coordinates = Coordinates(poslat, poslong);
     PrayerTimes prayerTimes = PrayerTimes(coordinates, date, params);
-    String next = prayerTimes.nextPrayer();
+    String next = prayerTimes.currentPrayer(date: date);
     DateTime? nextPrayertime = prayerTimes.timeForPrayer(next);
     String current = prayerTimes.currentPrayer(date: DateTime.now());
     DateTime? currentPrayerTime = prayerTimes.timeForPrayer(current);
@@ -218,6 +216,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   style: TextStyle(
                                       color: Color(0xff106cb0),
                                       fontFamily: 'VT323',
+                                      letterSpacing: 2,
                                       fontSize: 35,
                                       fontWeight: FontWeight.bold)),
                             ),
@@ -249,6 +248,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   style: TextStyle(
                                       color: Color(0xff106cb0),
                                       fontFamily: 'VT323',
+                                      letterSpacing: 2,
                                       fontSize: 35,
                                       fontWeight: FontWeight.bold)),
                             ),
